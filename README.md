@@ -1,3 +1,3 @@
-# Dottory: Decentralized Lottery
+# Dottery: Decentralized Lottery
 
 
