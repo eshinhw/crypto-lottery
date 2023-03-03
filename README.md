@@ -1,2 +1,3 @@
-# dottory
-Decentralized Lottery Project
+# Dottory: Decentralized Lottery
+
+
