@@ -1,10 +1,23 @@
 import { Box, Button, Container, Grid } from "@mui/material";
 import React, { useState } from "react";
-import "../css/NumberSelection.css"
+import "../css/NumberSelection.css";
+import upArrow from "../assets/up-arrow.png";
+import downArrow from "../assets/down-arrow.png";
 
 function NumberSelection() {
   const [count, setCount] = useState(0);
   const [selection, setSelection] = useState([]);
+  const [entryFee, setEntryFee] = useState(0.01);
+
+  const handleSubmit = () => {
+    if (selection.length < 7) {
+      window.alert("Please choose seven lucky numbers!");
+      return;
+    }
+    window.alert("You are in!");
+    resetGame();
+  };
+
   const changeColor = (e) => {
     if (
       count + 1 > 7 ||
@@ -21,8 +34,17 @@ function NumberSelection() {
       setSelection([...selection, e.target.innerText]);
     }
   };
-  const resetNumpad = () => {
+  const resetGame = () => {
     document.location.reload();
+  };
+
+  const increaseEntryFee = () => {
+    setEntryFee(entryFee + 0.01);
+  };
+  const decreaseEntryFee = () => {
+    if (entryFee > 0.01) {
+      setEntryFee(entryFee - 0.01);
+    }
   };
   return (
     <div className="home">
@@ -50,12 +72,14 @@ function NumberSelection() {
         </div>
       </div>
       <div className="price">
-        <p>0.01 ETH</p>
+        <img src={upArrow} alt="" onClick={increaseEntryFee} />
+        <p>{Number(entryFee).toFixed(2)} ETH</p>
+        <img src={downArrow} alt="" onClick={decreaseEntryFee} />
       </div>
 
       <div className="buttons">
-        <button onClick={resetNumpad}>Reset</button>
-        <button>Submit</button>
+        <button onClick={resetGame}>Reset</button>
+        <button onClick={handleSubmit}>Submit</button>
       </div>
     </div>
   );
