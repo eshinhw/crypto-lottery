@@ -1,14 +1,16 @@
 import { Box, Button, Container, Grid } from "@mui/material";
-import React, { useState } from "react";
+import React, { memo, useRef, useState } from "react";
 import "../css/NumberSelection.css";
 import upArrow from "../assets/up-arrow.png";
 import downArrow from "../assets/down-arrow.png";
-
+import Countdown from "react-countdown";
 
 function NumberSelection() {
-  const [count, setCount] = useState(0);
-  const [selection, setSelection] = useState([]);
+  const count = useRef(0);
+  const selection = useRef([]);
   const [entryFee, setEntryFee] = useState(0.01);
+
+  const startTime = useRef(Date.now());
 
   const handleSubmit = () => {
     if (selection.length < 7) {
@@ -31,8 +33,8 @@ function NumberSelection() {
         e.target.innerText - 1
       ].style.backgroundColor = "black";
       document.getElementsByClassName("num__element")[e.target.innerText - 1].style.color = "white";
-      setCount(count + 1);
-      setSelection([...selection, e.target.innerText]);
+      count.current = count.current + 1;
+      selection.current = [...selection.current, e.target.innerText];
     }
   };
   const resetGame = () => {
@@ -40,15 +42,21 @@ function NumberSelection() {
   };
 
   const increaseEntryFee = () => {
+    // entryFee.current = entryFee.current + 0.01;
     setEntryFee(entryFee + 0.01);
   };
   const decreaseEntryFee = () => {
     if (entryFee > 0.01) {
+      // entryFee.current = entryFee.current - 0.01;
       setEntryFee(entryFee - 0.01);
     }
   };
   return (
     <div className="home">
+      <div className="ct__container">
+        <Countdown className="countdown" date={startTime.current + 50000} />
+      </div>
+
       <div className="numpad__container">
         <div className="num__row">
           {Array.from({ length: 10 }, (_, i) => i + 1).map((n, i) => (
@@ -74,6 +82,7 @@ function NumberSelection() {
       </div>
       <div className="price">
         <img src={upArrow} alt="" onClick={increaseEntryFee} />
+        {/* <p>{Number(entryFee.current).toFixed(2)} ETH</p> */}
         <p>{Number(entryFee).toFixed(2)} ETH</p>
         <img src={downArrow} alt="" onClick={decreaseEntryFee} />
       </div>
