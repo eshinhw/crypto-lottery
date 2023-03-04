@@ -4,6 +4,7 @@ import "../css/NumberSelection.css";
 import upArrow from "../assets/up-arrow.png";
 import downArrow from "../assets/down-arrow.png";
 
+
 function NumberSelection() {
   const [count, setCount] = useState(0);
   const [selection, setSelection] = useState([]);
