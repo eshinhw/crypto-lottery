@@ -12,14 +12,15 @@ function NumberSelection() {
       return;
     }
     if (
-      document.getElementsByClassName("num__element")[e.target.innerText - 1].style.backgroundColor ===
-      "black"
+      document.getElementsByClassName("num__element")[e.target.innerText - 1].style
+        .backgroundColor === "#247c71"
     ) {
       return;
     } else {
-      document.getElementsByClassName("letter")[e.target.innerText - 1].style.backgroundColor =
-        "black";
-      document.getElementsByClassName("letter")[e.target.innerText - 1].style.color = "white";
+      document.getElementsByClassName("num__element")[
+        e.target.innerText - 1
+      ].style.backgroundColor = "black";
+      document.getElementsByClassName("num__element")[e.target.innerText - 1].style.color = "white";
       setCount(count + 1);
       setSelection([...selection, e.target.innerText]);
     }
@@ -31,42 +32,26 @@ function NumberSelection() {
     <div className="home">
       <div className="numpad__container">
         <div className="num__row">
-          <div className="num__element" onClick={changeColor}>1</div>
-          <div className="num__element">2</div>
-          <div className="num__element">3</div>
-          <div className="num__element">4</div>
-          <div className="num__element">5</div>
-          <div className="num__element">6</div>
-          <div className="num__element">7</div>
-          <div className="num__element">8</div>
-          <div className="num__element">9</div>
-          <div className="num__element">10</div>
+          {Array.from({ length: 10 }, (_, i) => i + 1).map((n, i) => (
+            <div className="num__element" onClick={changeColor}>
+              {n}
+            </div>
+          ))}
         </div>
         <div className="num__row">
-          <div className="num__element">11</div>
-          <div className="num__element">12</div>
-          <div className="num__element">13</div>
-          <div className="num__element">14</div>
-          <div className="num__element">15</div>
-          <div className="num__element">16</div>
-          <div className="num__element">17</div>
-          <div className="num__element">18</div>
-          <div className="num__element">19</div>
-          <div className="num__element">20</div>
+          {Array.from({ length: 10 }, (_, i) => i + 11).map((n, i) => (
+            <div className="num__element" onClick={changeColor}>
+              {n}
+            </div>
+          ))}
         </div>
         <div className="num__row">
-          <div className="num__element">21</div>
-          <div className="num__element">22</div>
-          <div className="num__element">23</div>
-          <div className="num__element">24</div>
-          <div className="num__element">25</div>
-          <div className="num__element">26</div>
-          <div className="num__element">27</div>
-          <div className="num__element">28</div>
-          <div className="num__element">29</div>
-          <div className="num__element">30</div>
+          {Array.from({ length: 10 }, (_, i) => i + 21).map((n, i) => (
+            <div className="num__element" onClick={changeColor}>
+              {n}
+            </div>
+          ))}
         </div>
-
       </div>
 
       <div className="buttons">
