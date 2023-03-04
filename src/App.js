@@ -1,4 +1,3 @@
-import "./css/App.css";
 import Header from "./components/Header";
 import NumberSelection from "./components/NumberSelection";
 

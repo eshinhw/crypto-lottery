@@ -1,22 +1,18 @@
 import { Box, Button, Container, Grid } from "@mui/material";
 import React, { useState } from "react";
+import "../css/NumberSelection.css"
 
 function NumberSelection() {
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
   const [selection, setSelection] = useState([]);
   const changeColor = (e) => {
-    if (count > 7) return;
-    if (count === 7) {
-      setSelection([...selection, e.target.innerText]);
-      setCount(count + 1);
-      return;
-    }
     if (
+      count + 1 > 7 ||
       document.getElementsByClassName("num__element")[e.target.innerText - 1].style
         .backgroundColor === "#247c71"
-    ) {
+    )
       return;
-    } else {
+    else {
       document.getElementsByClassName("num__element")[
         e.target.innerText - 1
       ].style.backgroundColor = "black";
@@ -33,30 +29,31 @@ function NumberSelection() {
       <div className="numpad__container">
         <div className="num__row">
           {Array.from({ length: 10 }, (_, i) => i + 1).map((n, i) => (
-            <div className="num__element" onClick={changeColor}>
+            <div className="num__element" onClick={changeColor} key={i}>
               {n}
             </div>
           ))}
         </div>
         <div className="num__row">
           {Array.from({ length: 10 }, (_, i) => i + 11).map((n, i) => (
-            <div className="num__element" onClick={changeColor}>
+            <div className="num__element" onClick={changeColor} key={i}>
               {n}
             </div>
           ))}
         </div>
         <div className="num__row">
           {Array.from({ length: 10 }, (_, i) => i + 21).map((n, i) => (
-            <div className="num__element" onClick={changeColor}>
+            <div className="num__element" onClick={changeColor} key={i}>
               {n}
             </div>
           ))}
         </div>
       </div>
+      <div className="price">
+        <p>0.01 ETH</p>
+      </div>
 
       <div className="buttons">
-        <p>Count: {count}</p>
-        <p>Selection: {selection}</p>
         <button onClick={resetNumpad}>Reset</button>
         <button>Submit</button>
       </div>
