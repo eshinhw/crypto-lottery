@@ -1,15 +1,20 @@
 .home {
   justify-content: center;
+  background-color: #24247c;
+  height: fit-content;
 }
 
 .numpad__container {
   width: 670px;
   height: 400px;
-  background-color: bisque;
+  background-color: white;
   justify-content: center;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 150px;
+  border-radius: 10px;
+  box-shadow: 10px;
 }
 
 #keyboard {
@@ -18,9 +23,9 @@
   padding: 0;
   list-style: none;
 }
+
 #keyboard li {
   float: left;
-  /* text-align: center; */
   margin: 0 5px 5px 0;
   width: 60px;
   height: 60px;
@@ -49,7 +54,7 @@
 }
 
 .buttons > button {
-  background-color: aqua;
+  background-color: yellowgreen;
   cursor: pointer;
   width: 100px;
   height: 40px;
