@@ -12,7 +12,7 @@ function NumberSelection() {
       return;
     }
     if (
-      document.getElementsByClassName("letter")[e.target.innerText - 1].style.backgroundColor ===
+      document.getElementsByClassName("num__element")[e.target.innerText - 1].style.backgroundColor ===
       "black"
     ) {
       return;
@@ -30,98 +30,43 @@ function NumberSelection() {
   return (
     <div className="home">
       <div className="numpad__container">
-        <ul id="keyboard">
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            1
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            2
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            3
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            4
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            5
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            6
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            7
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            8
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            9
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            10
-          </li>
-          <li className="letter clearl" onClick={(e) => changeColor(e)}>
-            11
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            12
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            13
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            14
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            15
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            16
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            17
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            18
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            19
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            20
-          </li>
-          <li className="letter clearl" onClick={(e) => changeColor(e)}>
-            21
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            22
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            23
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            24
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            25
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            26
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            27
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            28
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            29
-          </li>
-          <li className="letter" onClick={(e) => changeColor(e)}>
-            30
-          </li>
-        </ul>
+        <div className="num__row">
+          <div className="num__element" onClick={changeColor}>1</div>
+          <div className="num__element">2</div>
+          <div className="num__element">3</div>
+          <div className="num__element">4</div>
+          <div className="num__element">5</div>
+          <div className="num__element">6</div>
+          <div className="num__element">7</div>
+          <div className="num__element">8</div>
+          <div className="num__element">9</div>
+          <div className="num__element">10</div>
+        </div>
+        <div className="num__row">
+          <div className="num__element">11</div>
+          <div className="num__element">12</div>
+          <div className="num__element">13</div>
+          <div className="num__element">14</div>
+          <div className="num__element">15</div>
+          <div className="num__element">16</div>
+          <div className="num__element">17</div>
+          <div className="num__element">18</div>
+          <div className="num__element">19</div>
+          <div className="num__element">20</div>
+        </div>
+        <div className="num__row">
+          <div className="num__element">21</div>
+          <div className="num__element">22</div>
+          <div className="num__element">23</div>
+          <div className="num__element">24</div>
+          <div className="num__element">25</div>
+          <div className="num__element">26</div>
+          <div className="num__element">27</div>
+          <div className="num__element">28</div>
+          <div className="num__element">29</div>
+          <div className="num__element">30</div>
+        </div>
+
       </div>
 
       <div className="buttons">

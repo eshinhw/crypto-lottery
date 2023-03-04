@@ -1,46 +1,36 @@
 .home {
-  justify-content: center;
   background-color: #24247c;
-  height: fit-content;
+  max-height: max-content;
 }
 
 .numpad__container {
-  width: 670px;
-  height: 400px;
+  width: 750px;
+  height: 235px;
   background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25px;
+}
+
+.num__row {
+  display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 150px;
-  border-radius: 10px;
-  box-shadow: 10px;
 }
 
-#keyboard {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0;
-  list-style: none;
-}
-
-#keyboard li {
-  float: left;
-  margin: 0 5px 5px 0;
-  width: 60px;
-  height: 60px;
-  font-size: 15px;
-  line-height: 60px;
+.num__element {
+  border-color: black;
+  padding: 5 5 5 5;
+  background-color: #247c71;
+  width: 50px;
+  height: 50px;
   text-align: center;
-  background: #fff;
-  border: 1px solid red;
-  border-radius: 25px;
-  color: red;
+  vertical-align: middle;
+  border-radius: 10px;
+  line-height: 50px;
+  margin-top: 20px;
+  margin-right: 10px;
   cursor: pointer;
-}
-
-.clearl {
-  clear: left;
 }
 
 .buttons {
@@ -53,9 +43,14 @@
   gap: 20px;
 }
 
+.buttons p {
+  color: white;
+}
+
 .buttons > button {
-  background-color: yellowgreen;
+  background-color: white;
   cursor: pointer;
   width: 100px;
   height: 40px;
+  border-radius: 20px;
 }
