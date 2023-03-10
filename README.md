@@ -1,5 +1,4 @@
-# Dottery: Decentralized Lottery
-
+# Crypto Lottery
 
 ## Getting Started with Create React App
 
